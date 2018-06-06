@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
+<div class="notify-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="notify-descr">Текст сообщения</p>
+        <textarea class="form-control" rows="10" id="message"></textarea>
+      </div>
+      <div class="col-sm-6">
+        <p class="notify-descr">Города получатели</p>
+        <div class="checkbox">
+          <label><input id="all-check" type="checkbox" value="" onclick="selectAll()">Все</label>
+        </div>
+        {% for city in cityes %}
+        <div class="checkbox">
+          <label><input class="city-check" type="checkbox" value="" id="{{city.name}}-checkbox">{{city.name}}</label>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-primary" onclick="sendNotify()">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
