@@ -1,3 +1,3 @@
-# bots
+# bots (2017)
 
-Бот для заказа такси
+Telegram-бот для заказа такси @taxifishkabot
